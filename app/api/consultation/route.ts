@@ -49,7 +49,7 @@ export async function POST(request: Request) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      from: "Elegant Home Automation <onboarding@resend.dev>",
+      from: "Elegant Home Automation <designs@eleganthomeautomation.com>",
       to: ["shorabtuli1975@gmail.com"],
       reply_to: email,
       subject: "New Consultation Request - Elegant Home Automation",
