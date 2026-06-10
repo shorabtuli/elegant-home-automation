@@ -1,42 +1,90 @@
-const services = [
-  "Smart Home Automation",
-  "Home Wi-Fi & Networking",
-  "Security Cameras",
-  "Smart Lighting",
-  "Motorized Shades",
-  "Home Theater",
-  "Audio Video",
-  "Networking & Wi-Fi",
-  "Managed Support",
-  "Not sure yet"
-];
+"use client";
+
+import { FormEvent, useState } from "react";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function ContactForm() {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [error, setError] = useState("");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setError("");
+
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const projectDescription = String(formData.get("projectDescription") || "").trim();
+
+    if (!name || !email || !projectDescription) {
+      setError("Please complete all fields before submitting.");
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    setStatus("submitting");
+
+    try {
+      const response = await fetch("/api/consultation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, projectDescription })
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setStatus("success");
+      event.currentTarget.reset();
+      window.gtag?.("event", "consultation_form_submit");
+    } catch {
+      setStatus("error");
+      setError("Something went wrong. Please try again.");
+    }
+  }
+
   return (
-    <form className="grid gap-4 rounded-lg border border-ink/10 bg-white p-5 shadow-soft sm:p-8">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium text-ink/70">First name<input className="field" name="first_name" autoComplete="given-name" placeholder="First name" /></label>
-        <label className="grid gap-2 text-sm font-medium text-ink/70">Last name<input className="field" name="last_name" autoComplete="family-name" placeholder="Last name" /></label>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium text-ink/70">Email<input className="field" type="email" name="email" autoComplete="email" placeholder="you@example.com" /></label>
-        <label className="grid gap-2 text-sm font-medium text-ink/70">Phone<input className="field" name="phone" autoComplete="tel" placeholder="[PHONE]" /></label>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium text-ink/70">City<input className="field" name="city" autoComplete="address-level2" placeholder="Irvine, Newport Beach, etc." /></label>
-        <label className="grid gap-2 text-sm font-medium text-ink/70">
-          Service type
-          <select className="field" name="service" defaultValue="">
-            <option value="" disabled>Select a service</option>
-            {services.map((service) => <option key={service}>{service}</option>)}
-          </select>
-        </label>
-      </div>
+    <form onSubmit={handleSubmit} className="grid gap-5 rounded-lg border border-ink/10 bg-white p-5 shadow-soft sm:p-8">
       <label className="grid gap-2 text-sm font-medium text-ink/70">
-        Message
-        <textarea className="field min-h-36 resize-y" name="description" placeholder="Tell us what you want to improve, what is frustrating today, and where the home is located." />
+        Name
+        <input className="field" name="name" autoComplete="name" placeholder="Your name" required />
       </label>
-      <button type="button" className="button-primary w-full sm:w-fit">Submit</button>
+      <label className="grid gap-2 text-sm font-medium text-ink/70">
+        Email
+        <input className="field" type="email" name="email" autoComplete="email" placeholder="you@example.com" required />
+      </label>
+      <label className="grid gap-2 text-sm font-medium text-ink/70">
+        Project Description
+        <textarea
+          className="field min-h-40 resize-y"
+          name="projectDescription"
+          placeholder="Tell us what you want to improve, what is frustrating today, and where the home is located."
+          required
+        />
+      </label>
+
+      {error ? <p className="text-sm font-medium text-red-700">{error}</p> : null}
+      {status === "success" ? (
+        <p className="rounded-lg border border-copper/25 bg-copper/10 p-4 text-sm font-medium text-ink">
+          Thank you. We received your request and will be in touch soon.
+        </p>
+      ) : null}
+
+      <button type="submit" disabled={status === "submitting"} className="button-primary w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-fit">
+        {status === "submitting" ? "Sending..." : "Submit"}
+      </button>
     </form>
   );
 }

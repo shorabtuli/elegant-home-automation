@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 const faqs = [
   {
     question: "What happens after I request a consultation?",
-    answer: "Before launch, this form should be connected to email, a CRM, or a form service. Once connected, use it to collect the homeowner's city, priorities, project type, and current technology concerns."
+    answer: "Your request is sent to Elegant Home Automation. We will review your project description and follow up to learn more about your home, priorities, and timing."
   },
   {
     question: "What should I include in the project description?",

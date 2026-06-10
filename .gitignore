@@ -3,3 +3,5 @@ node_modules
 work/npm-cache
 .vercel
 *.log
+.env.local
+.DS_Store
