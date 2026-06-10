@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1050" viewBox="0 0 1400 1050" role="img" aria-label="Replace with luxury Orange County smart home hero photo">
+  <rect width="1400" height="1050" fill="#f8f6f1"/>
+  <rect x="120" y="150" width="1160" height="700" rx="18" fill="#ffffff"/>
+  <rect x="180" y="230" width="480" height="360" rx="10" fill="#d8dedf"/>
+  <rect x="720" y="230" width="420" height="90" rx="8" fill="#31564c"/>
+  <rect x="720" y="360" width="320" height="28" rx="14" fill="#b8945d"/>
+  <rect x="720" y="420" width="500" height="24" rx="12" fill="#9e6f55" opacity=".45"/>
+  <rect x="720" y="475" width="430" height="24" rx="12" fill="#171717" opacity=".18"/>
+  <text x="180" y="690" font-family="Arial" font-size="38" fill="#171717">Replace: premium smart home living room</text>
+</svg>
