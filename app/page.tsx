@@ -53,7 +53,7 @@ export default function Home() {
           <div className="max-w-5xl">
             <p className="text-sm font-semibold tracking-[0.12em] text-copper">Services</p>
             <h2 className="mt-4 max-w-4xl text-3xl font-semibold leading-tight text-ink sm:text-4xl">
-              Smart Home Automation Solutions Designed for Modern Orange County Living.
+              Smart Home Automation Solutions Designed for Modern Orange County Domiciled.
             </h2>
           </div>
           <div className="mt-10 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
