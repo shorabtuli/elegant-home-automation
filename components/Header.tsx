@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ServicesDropdown } from "@/components/MarketingComponents";
@@ -19,9 +20,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 shadow-sm backdrop-blur-xl">
       <div className="container-pad flex min-h-20 items-center justify-between gap-5">
-        <Link href="/" className="min-w-0">
-          <div className="font-display text-2xl font-black uppercase leading-none tracking-normal text-ink">Elegant</div>
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">Home Automation</div>
+        <Link href="/" className="relative block h-14 w-40 shrink-0" aria-label="Elegant Home Automation home">
+          <Image
+            src="/images/elegant-home-automation-logo.png"
+            alt="Elegant Home Automation"
+            fill
+            sizes="160px"
+            className="object-contain"
+            priority
+          />
         </Link>
         <nav className="hidden items-center gap-6 lg:flex">
           <ServicesDropdown label="Services" items={serviceNav} />

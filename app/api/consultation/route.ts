@@ -34,32 +34,26 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Email delivery is not configured." }, { status: 500 });
   }
 
-  const emailBody = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    "",
-    "Project Description:",
-    projectDescription
-  ].join("\n");
-
   const resendResponse = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${resendApiKey}`,
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
       from: "Elegant Home Automation <designs@eleganthomeautomation.com>",
-      to: ["shorabtuli1975@gmail.com"],
+      to: ["shorabtuli@gmail.com"],
       reply_to: email,
-      subject: "New Consultation Request - Elegant Home Automation",
-      text: emailBody
+      subject: `New consultation request from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nProject Description:\n${projectDescription}`
     })
   });
 
   if (!resendResponse.ok) {
+    const resendError = await resendResponse.text();
+    console.error("Resend email failed:", resendResponse.status, resendError);
     return NextResponse.json({ error: "Email delivery failed." }, { status: 502 });
   }
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true }, { status: 200 });
 }
