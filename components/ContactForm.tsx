@@ -18,7 +18,8 @@ export function ContactForm() {
     event.preventDefault();
     setError("");
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const name = String(formData.get("name") || "").trim();
     const email = String(formData.get("email") || "").trim();
     const projectDescription = String(formData.get("projectDescription") || "").trim();
@@ -42,16 +43,30 @@ export function ContactForm() {
         body: JSON.stringify({ name, email, projectDescription })
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Submission failed");
+        throw new Error(data.error || "Submission failed");
       }
 
       setStatus("success");
-      event.currentTarget.reset();
+      form.reset();
+    } catch (err) {
+      console.error("Consultation form error:", err);
+
+      setStatus("error");
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again."
+      );
+      return;
+    }
+
+    try {
       window.gtag?.("event", "consultation_form_submit");
     } catch {
-      setStatus("error");
-      setError("Something went wrong. Please try again.");
+      // Analytics should never block a successful lead submission.
     }
   }
 

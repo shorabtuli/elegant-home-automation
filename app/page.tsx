@@ -72,7 +72,15 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-8 max-w-5xl rounded-lg border border-ink/10 bg-white p-5 shadow-soft">
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <div>
+                <Link href="/blog/best-home-automation-company-orange-county" className="text-base font-semibold text-copper">
+                  Best Home Automation Company Orange County
+                </Link>
+                <p className="mt-2 text-sm leading-6 text-ink/62">
+                  See what to look for in a premium Orange County home automation partner.
+                </p>
+              </div>
               <div>
                 <Link href="/smart-home-installation-orange-county" className="text-base font-semibold text-copper">
                   Smart Home Installation
@@ -87,6 +95,38 @@ export default function Home() {
                 </Link>
                 <p className="mt-2 text-sm leading-6 text-ink/62">
                   Understand what impacts investment, from lighting and shades to whole-home integration.
+                </p>
+              </div>
+              <div>
+                <Link href="/blog/smart-home-installer-irvine" className="text-base font-semibold text-copper">
+                  Smart Home Installer Irvine
+                </Link>
+                <p className="mt-2 text-sm leading-6 text-ink/62">
+                  Explore smart home installation planning for Irvine homes, remodels, and connected living.
+                </p>
+              </div>
+              <div>
+                <Link href="/blog/whole-home-audio-irvine" className="text-base font-semibold text-copper">
+                  Whole Home Audio Irvine
+                </Link>
+                <p className="mt-2 text-sm leading-6 text-ink/62">
+                  Learn how premium multi-room audio can be planned around Irvine homes and daily living.
+                </p>
+              </div>
+              <div>
+                <Link href="/blog/motorized-shades-newport-beach" className="text-base font-semibold text-copper">
+                  Motorized Shades Newport Beach
+                </Link>
+                <p className="mt-2 text-sm leading-6 text-ink/62">
+                  Explore automated shade planning for Newport Beach coastal homes, views, privacy, and comfort.
+                </p>
+              </div>
+              <div>
+                <Link href="/blog/home-network-setup-for-large-homes" className="text-base font-semibold text-copper">
+                  Home Network Setup for Large Homes
+                </Link>
+                <p className="mt-2 text-sm leading-6 text-ink/62">
+                  See how stronger home networks support large Orange County homes, outdoor spaces, and smart systems.
                 </p>
               </div>
             </div>
@@ -114,6 +154,11 @@ export default function Home() {
                 </Link>
                 {" "}
                 and
+                {" "}
+                <Link href="/blog/smart-home-installer-irvine" className="font-semibold text-copper">
+                  smart home installer services in Irvine
+                </Link>
+                ,
                 {" "}
                 <Link href="/smart-home-automation-newport-beach" className="font-semibold text-copper">
                   smart home automation for Newport Beach homeowners

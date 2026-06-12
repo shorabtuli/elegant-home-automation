@@ -29,7 +29,21 @@ export const locationNav = [
 ];
 
 export const blogNav = [
+  { title: "Blog Home", href: "/blog-learning-center" },
+  { title: "Project Spotlights", href: "/reviews-project-gallery" }
+];
+
+export const blogSeoNav = [
+  { title: "Best Home Automation Company Orange County", href: "/blog/best-home-automation-company-orange-county" },
   { title: "Smart Home Automation Orange County", href: "/smart-home-automation-orange-county" },
+  { title: "Whole Home Audio Irvine", href: "/blog/whole-home-audio-irvine" },
+  { title: "Motorized Shades Newport Beach", href: "/blog/motorized-shades-newport-beach" },
+  { title: "Home Network Setup for Large Homes", href: "/blog/home-network-setup-for-large-homes" },
+  { title: "Smart Home Installer Irvine", href: "/blog/smart-home-installer-irvine" },
+  { title: "Smart Home Installer Costa Mesa", href: "/costa-mesa-smart-home-automation" },
+  { title: "Smart Home Installer Newport Coast", href: "/newport-coast-smart-home-automation" },
+  { title: "Smart Home Installer Laguna Beach", href: "/laguna-beach-smart-home-automation" },
+  { title: "Smart Home Installer Tustin", href: "/tustin-smart-home-automation" },
   { title: "Smart Home Automation Cost Orange County", href: "/smart-home-automation-cost-orange-county" },
   { title: "Smart Home Installation Orange County", href: "/smart-home-installation-orange-county" },
   { title: "Smart Home Automation Irvine", href: "/smart-home-automation-irvine" },

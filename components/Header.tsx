@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ServicesDropdown } from "@/components/MarketingComponents";
-import { blogNav, locationNav, serviceNav, site } from "@/lib/site";
+import { blogNav, blogSeoNav, locationNav, serviceNav, site } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -33,7 +33,7 @@ export function Header() {
         <nav className="hidden items-center gap-6 lg:flex">
           <ServicesDropdown label="Services" items={serviceNav} />
           <ServicesDropdown label="Locations" items={locationNav} />
-          <ServicesDropdown label="Blogs" items={blogNav} />
+          <BlogDropdown />
           <Link href="/smart-home-budget-estimator" className="py-2 text-sm font-semibold text-ink/74 transition hover:text-copper">Budget Calculator</Link>
           <Link href="/about" className="py-2 text-sm font-semibold text-ink/74 transition hover:text-copper">About</Link>
           <Link href={site.consultationPath} className="button-primary">Schedule a Consultation</Link>
@@ -62,7 +62,13 @@ export function Header() {
             {blogsOpen && (
               <div className="grid gap-2 rounded-lg border border-ink/10 bg-white p-2">
                 {blogNav.map((item) => (
-                  <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm font-semibold text-ink/70 transition hover:bg-ivory hover:text-copper">
+                  <Link key={`${item.href}-${item.title}`} href={item.href} onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm font-semibold text-ink/70 transition hover:bg-ivory hover:text-copper">
+                    {item.title}
+                  </Link>
+                ))}
+                <div className="px-3 pt-3 text-xs font-semibold uppercase tracking-[0.16em] text-copper">SEO Pages</div>
+                {blogSeoNav.map((item) => (
+                  <Link key={`${item.href}-${item.title}`} href={item.href} onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm font-semibold text-ink/70 transition hover:bg-ivory hover:text-copper">
                     {item.title}
                   </Link>
                 ))}
@@ -78,5 +84,40 @@ export function Header() {
         </div>
       )}
     </header>
+  );
+}
+
+function BlogDropdown() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="group relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <button
+        type="button"
+        onClick={() => setOpen((value) => !value)}
+        onFocus={() => setOpen(true)}
+        className="flex items-center gap-1 py-2 text-sm font-semibold text-ink/74 transition hover:text-copper"
+        aria-expanded={open}
+      >
+        Blogs
+        <span className="text-xs">v</span>
+      </button>
+      <div className="absolute left-0 top-full h-4 w-full bg-transparent" aria-hidden="true" />
+      <div className={`nav-menu w-72 ${open ? "visible opacity-100" : "invisible opacity-0"}`}>
+        {blogNav.map((item) => (
+          <Link key={`${item.href}-${item.title}`} href={item.href} className="block rounded-md px-3 py-2 text-sm font-medium text-ink/72 transition hover:bg-ivory hover:text-copper">
+            {item.title}
+          </Link>
+        ))}
+        <div className="px-3 pt-3 text-xs font-semibold uppercase tracking-[0.16em] text-copper">SEO Pages</div>
+        <div className="max-h-[60vh] overflow-y-auto">
+          {blogSeoNav.map((item) => (
+            <Link key={`${item.href}-${item.title}`} href={item.href} className="block rounded-md px-3 py-2 text-sm font-medium text-ink/72 transition hover:bg-ivory hover:text-copper">
+              {item.title}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

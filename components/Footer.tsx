@@ -21,7 +21,10 @@ export function Footer() {
           { title: "Budget Calculator", href: "/smart-home-budget-estimator" },
           { title: "About", href: "/about" },
           { title: "Customer Support", href: "/managed-home-technology-plans" },
-          { title: "Learning Center", href: "/blog-learning-center" }
+          { title: "Learning Center", href: "/blog-learning-center" },
+          { title: "Whole Home Audio Irvine", href: "/blog/whole-home-audio-irvine" },
+          { title: "Motorized Shades Newport Beach", href: "/blog/motorized-shades-newport-beach" },
+          { title: "Home Network Setup", href: "/blog/home-network-setup-for-large-homes" }
         ]} />
         <div>
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Newsletter</div>
