@@ -71,64 +71,112 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div className="mt-8 max-w-5xl rounded-lg border border-ink/10 bg-white p-5 shadow-soft">
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              <div>
-                <Link href="/blog/best-home-automation-company-orange-county" className="text-base font-semibold text-copper">
-                  Best Home Automation Company Orange County
+          <div className="mt-12 max-w-5xl rounded-lg border border-ink/10 bg-white p-6 shadow-soft sm:p-8">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-copper">Smart Home Guides</p>
+              <h2 className="mt-3 text-2xl font-semibold leading-tight text-ink sm:text-3xl">
+                Orange County smart home planning resources.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-ink/62">
+                Explore local guides for installation planning, whole-home audio, motorized shades, home networking, and choosing a thoughtful automation partner.
+              </p>
+              <p className="mt-5 text-base leading-7 text-ink/62">
+                Read smart home insights from Elegant Home Automation.
+                {" "}
+                <Link href="/blog" className="font-semibold text-copper transition hover:text-ink">
+                  Visit the Blog →
                 </Link>
+              </p>
+            </div>
+            <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <Link href="/blog/best-home-automation-company-orange-county" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
+                  Best Home Automation Company Orange County
+                </span>
                 <p className="mt-2 text-sm leading-6 text-ink/62">
                   See what to look for in a premium Orange County home automation partner.
                 </p>
-              </div>
-              <div>
-                <Link href="/smart-home-installation-orange-county" className="text-base font-semibold text-copper">
+              </Link>
+              <Link href="/smart-home-installation-orange-county" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
                   Smart Home Installation
-                </Link>
+                </span>
                 <p className="mt-2 text-sm leading-6 text-ink/62">
                   See how design, installation, programming, and support come together in an Orange County smart home.
                 </p>
-              </div>
-              <div>
-                <Link href="/smart-home-automation-cost-orange-county" className="text-base font-semibold text-copper">
+              </Link>
+              <Link href="/blog/control4-installer-near-me" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
+                  Control4 Installer Near Me
+                </span>
+                <p className="mt-2 text-sm leading-6 text-ink/62">
+                  Learn how Control4 can connect lighting, shades, audio, security, climate, and entertainment.
+                </p>
+              </Link>
+              <Link href="/blog/smart-home-irvine" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
+                  Smart Home Irvine
+                </span>
+                <p className="mt-2 text-sm leading-6 text-ink/62">
+                  Explore premium smart home design for Irvine living, from lighting and shades to automation.
+                </p>
+              </Link>
+              <Link href="/blog/luxury-smart-home-setup" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
+                  Luxury Smart Home Setup
+                </span>
+                <p className="mt-2 text-sm leading-6 text-ink/62">
+                  See how luxury home technology can be planned around architecture, comfort, and lifestyle.
+                </p>
+              </Link>
+              <Link href="/smart-home-automation-cost-orange-county" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
                   Smart Home Automation Cost Guide
-                </Link>
+                </span>
                 <p className="mt-2 text-sm leading-6 text-ink/62">
                   Understand what impacts investment, from lighting and shades to whole-home integration.
                 </p>
-              </div>
-              <div>
-                <Link href="/blog/smart-home-installer-irvine" className="text-base font-semibold text-copper">
+              </Link>
+              <Link href="/blog/smart-home-installer-irvine" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
                   Smart Home Installer Irvine
-                </Link>
+                </span>
                 <p className="mt-2 text-sm leading-6 text-ink/62">
                   Explore smart home installation planning for Irvine homes, remodels, and connected living.
                 </p>
-              </div>
-              <div>
-                <Link href="/blog/whole-home-audio-irvine" className="text-base font-semibold text-copper">
+              </Link>
+              <Link href="/blog/whole-home-audio-irvine" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
                   Whole Home Audio Irvine
-                </Link>
+                </span>
                 <p className="mt-2 text-sm leading-6 text-ink/62">
                   Learn how premium multi-room audio can be planned around Irvine homes and daily living.
                 </p>
-              </div>
-              <div>
-                <Link href="/blog/motorized-shades-newport-beach" className="text-base font-semibold text-copper">
+              </Link>
+              <Link href="/blog/motorized-shades-newport-beach" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
                   Motorized Shades Newport Beach
-                </Link>
+                </span>
                 <p className="mt-2 text-sm leading-6 text-ink/62">
                   Explore automated shade planning for Newport Beach coastal homes, views, privacy, and comfort.
                 </p>
-              </div>
-              <div>
-                <Link href="/blog/home-network-setup-for-large-homes" className="text-base font-semibold text-copper">
+              </Link>
+              <Link href="/blog/home-network-setup-for-large-homes" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
                   Home Network Setup for Large Homes
-                </Link>
+                </span>
                 <p className="mt-2 text-sm leading-6 text-ink/62">
                   See how stronger home networks support large Orange County homes, outdoor spaces, and smart systems.
                 </p>
-              </div>
+              </Link>
+              <Link href="/blog/smart-lighting-installer" className="group rounded-lg border border-ink/10 bg-ivory p-5 transition hover:-translate-y-1 hover:border-copper/30">
+                <span className="text-base font-semibold text-copper transition group-hover:text-ink">
+                  Smart Lighting Installer
+                </span>
+                <p className="mt-2 text-sm leading-6 text-ink/62">
+                  Learn how thoughtful lighting control creates better ambiance, comfort, and smart home scenes.
+                </p>
+              </Link>
             </div>
           </div>
         </div>

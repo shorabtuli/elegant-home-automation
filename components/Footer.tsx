@@ -9,6 +9,10 @@ export function Footer() {
           <div className="font-display text-3xl font-black uppercase leading-none">Elegant</div>
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-copper">Home Automation</div>
           <p className="mt-5 max-w-sm text-sm leading-7 text-white/65">{site.tagline}. Consultation, vendor coordination, and managed support planning for Orange County homes.</p>
+          <p className="mt-4 max-w-sm text-sm leading-7 text-white/55">
+            Serving Orange County, including Irvine, Newport Beach, Costa Mesa, Laguna Beach, Newport Coast, Anaheim,
+            Aliso Viejo, and surrounding communities.
+          </p>
           <div className="mt-6 space-y-1 text-sm text-white/65">
             <p>{site.phone}</p>
             <p>{site.email}</p>
@@ -18,13 +22,20 @@ export function Footer() {
         <FooterColumn title="Smart Home Solutions" items={serviceNav} />
         <FooterColumn title="Locations" items={locationNav} />
         <FooterColumn title="Quick Links" items={[
+          { title: "Home", href: "/" },
           { title: "Budget Calculator", href: "/smart-home-budget-estimator" },
           { title: "About", href: "/about" },
+          { title: "Schedule a Consultation", href: site.consultationPath },
           { title: "Customer Support", href: "/managed-home-technology-plans" },
           { title: "Learning Center", href: "/blog-learning-center" },
+          { title: "Sitemap", href: "/sitemap" },
+          { title: "Control4 Installer Near Me", href: "/blog/control4-installer-near-me" },
+          { title: "Smart Home Irvine", href: "/blog/smart-home-irvine" },
+          { title: "Luxury Smart Home Setup", href: "/blog/luxury-smart-home-setup" },
           { title: "Whole Home Audio Irvine", href: "/blog/whole-home-audio-irvine" },
           { title: "Motorized Shades Newport Beach", href: "/blog/motorized-shades-newport-beach" },
-          { title: "Home Network Setup", href: "/blog/home-network-setup-for-large-homes" }
+          { title: "Home Network Setup", href: "/blog/home-network-setup-for-large-homes" },
+          { title: "Smart Lighting Installer", href: "/blog/smart-lighting-installer" }
         ]} />
         <div>
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Newsletter</div>

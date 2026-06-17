@@ -29,16 +29,20 @@ export const locationNav = [
 ];
 
 export const blogNav = [
-  { title: "Blog Home", href: "/blog-learning-center" },
+  { title: "Blog Home", href: "/blog" },
   { title: "Project Spotlights", href: "/reviews-project-gallery" }
 ];
 
 export const blogSeoNav = [
   { title: "Best Home Automation Company Orange County", href: "/blog/best-home-automation-company-orange-county" },
+  { title: "Control4 Installer Near Me", href: "/blog/control4-installer-near-me" },
+  { title: "Smart Home Irvine", href: "/blog/smart-home-irvine" },
+  { title: "Luxury Smart Home Setup", href: "/blog/luxury-smart-home-setup" },
   { title: "Smart Home Automation Orange County", href: "/smart-home-automation-orange-county" },
   { title: "Whole Home Audio Irvine", href: "/blog/whole-home-audio-irvine" },
   { title: "Motorized Shades Newport Beach", href: "/blog/motorized-shades-newport-beach" },
   { title: "Home Network Setup for Large Homes", href: "/blog/home-network-setup-for-large-homes" },
+  { title: "Smart Lighting Installer", href: "/blog/smart-lighting-installer" },
   { title: "Smart Home Installer Irvine", href: "/blog/smart-home-installer-irvine" },
   { title: "Smart Home Installer Costa Mesa", href: "/costa-mesa-smart-home-automation" },
   { title: "Smart Home Installer Newport Coast", href: "/newport-coast-smart-home-automation" },
